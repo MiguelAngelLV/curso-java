@@ -89,4 +89,63 @@ public class ItemsTest {
 
 
     }
+
+    @Test
+    public void removeItem() {
+        Hero hero = new Hero();
+        assertEquals(hero.getTotalItems(), 0);
+
+        Item item1 = new Item();
+        Item item2 = new Item();
+        Item item3 = new Item();
+
+        hero.addItem(item1);
+        hero.addItem(item2);
+        hero.addItem(item3);
+
+        assertEquals(hero.getTotalItems(), 3);
+
+        hero.removeItem(0);
+        assertEquals(hero.getTotalItems(), 2);
+
+
+        hero.removeItem(1);
+        assertEquals(hero.getTotalItems(), 1);
+
+        hero.removeItem(1);
+        assertEquals(hero.getTotalItems(), 1);
+
+        hero.removeItem(0);
+        assertEquals(hero.getTotalItems(), 0);
+
+
+        hero.addItem(item1);
+        hero.addItem(item2);
+        hero.addItem(item3);
+
+        assertEquals(hero.getTotalItems(), 3);
+
+
+        hero.removeItem(item3);
+        hero.removeItem(item3);
+        hero.removeItem(item3);
+        assertEquals(hero.getTotalItems(), 2);
+        assertEquals(hero.getItem(0), item1);
+        assertEquals(hero.getItem(1), item2);
+
+
+        hero.removeItem(item1);
+        assertEquals(hero.getTotalItems(), 1);
+        assertEquals(hero.getItem(0), item2);
+
+        assertNull(hero.getItem(1));
+
+
+        hero.removeItem(item1);
+        hero.removeItem(-1);
+
+        assertEquals(hero.getTotalItems(), 1);
+
+
+    }
 }
