@@ -75,7 +75,7 @@ public class ItemsTest {
         Hero hero = new Hero();
         assertEquals(hero.getTotalItems(), 0);
 
-        assertNull(hero.getItem(1));
+        assertNull(hero.getItem(100));
 
         Item item1 = new Item();
         hero.addItem(item1);
