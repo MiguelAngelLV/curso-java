@@ -82,6 +82,7 @@ public class ItemsTest {
         assertNull(hero.getItem(1));
 
         Item item2 = new Item();
+        hero.addItem(item2);
         assertEquals(hero.getItem(1),  item2);
 
         assertNull(hero.getItem(-1));
