@@ -4,6 +4,8 @@ package test.com.swordsdragon;
 import com.swordsdragons.heros.Hero;
 import com.swordsdragons.items.Item;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertNull;
 import static junit.framework.TestCase.assertEquals;
 
 
@@ -22,8 +24,8 @@ public class ItemsTest {
 
         Item item2 = new Item();
         hero.addItem(item2);
-        assertEquals(hero.getTotalItems(), 2);
 
+        assertEquals(hero.getTotalItems(), 2);
     }
 
 
@@ -64,6 +66,26 @@ public class ItemsTest {
 
         hero.addItem(item3);
         assertEquals(hero.getTotalItems(), 3);
+
+    }
+
+
+    @Test
+    public void checkNulls() {
+        Hero hero = new Hero();
+        assertEquals(hero.getTotalItems(), 0);
+
+        assertNull(hero.getItem(1));
+
+        Item item1 = new Item();
+        hero.addItem(item1);
+        assertNull(hero.getItem(1));
+
+        Item item2 = new Item();
+        assertEquals(hero.getItem(1),  item2);
+
+        assertNull(hero.getItem(-1));
+
 
     }
 }
