@@ -6,9 +6,7 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
-/**
- * Created by link on 28/07/16.
- */
+
 public class PotionTest {
 
 
