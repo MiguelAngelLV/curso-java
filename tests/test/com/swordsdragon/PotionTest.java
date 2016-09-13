@@ -2,10 +2,11 @@ package test.com.swordsdragon;
 
 import com.swordsdragons.characters.GameCharacter;
 import com.swordsdragons.items.Item;
-import com.swordsdragons.potions.Potion;
+import com.swordsdragons.items.Potion;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
 
@@ -58,6 +59,23 @@ public class PotionTest {
 
         assertEquals(p1.getHP(), 50);
 
+
+    }
+
+    @Test
+    public void notRevive() {
+        GameCharacter gameCharacter = new GameCharacter();
+        gameCharacter.setMaxHP(10);
+        gameCharacter.setHp(-1);
+
+        assertFalse(gameCharacter.isAlive());
+
+        Potion potion = new Potion();
+        potion.setHp(20);
+
+        potion.use(gameCharacter);
+
+        assertFalse(gameCharacter.isAlive());
 
     }
 

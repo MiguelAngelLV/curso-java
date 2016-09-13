@@ -3,7 +3,7 @@ package test.com.swordsdragon;
 import com.swordsdragons.characters.GameCharacter;
 import com.swordsdragons.equip.Weapon;
 import com.swordsdragons.heros.Hero;
-import com.swordsdragons.potions.Potion;
+import com.swordsdragons.items.Potion;
 import org.junit.Test;
 
 /**

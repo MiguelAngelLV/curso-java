@@ -3,7 +3,7 @@ package test.com.swordsdragon;
 
 import com.swordsdragons.heros.Hero;
 import com.swordsdragons.items.Item;
-import com.swordsdragons.potions.Potion;
+import com.swordsdragons.items.Potion;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertNull;
