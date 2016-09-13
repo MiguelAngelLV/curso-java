@@ -1,10 +1,12 @@
 package test.com.swordsdragon;
 
 import com.swordsdragons.characters.GameCharacter;
+import com.swordsdragons.items.Item;
 import com.swordsdragons.potions.Potion;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 
 public class PotionTest {
@@ -31,6 +33,13 @@ public class PotionTest {
     }
 
     @Test
+    public void potionIsItem() {
+        Potion potion = new Potion();
+
+        assertTrue(potion instanceof Item);
+    }
+
+    @Test
     public void drinkPotion() {
         Potion potion = new Potion();
         potion.setHp(20);
@@ -39,13 +48,13 @@ public class PotionTest {
         p1.setMaxHP(50);
         p1.setHp(50);
 
-        potion.drink(p1);
+        potion.use(p1);
 
         assertEquals(p1.getHP(), 50);
 
         p1.setHp(45);
 
-        potion.drink(p1);
+        potion.use(p1);
 
         assertEquals(p1.getHP(), 50);
 

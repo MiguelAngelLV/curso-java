@@ -3,6 +3,7 @@ package test.com.swordsdragon;
 
 import com.swordsdragons.heros.Hero;
 import com.swordsdragons.items.Item;
+import com.swordsdragons.potions.Potion;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertNull;
@@ -17,12 +18,12 @@ public class ItemsTest {
         Hero hero = new Hero();
         assertEquals(hero.getTotalItems(), 0);
 
-        Item item = new Item();
+        Item item = new Potion();
         hero.addItem(item);
         assertEquals(hero.getTotalItems(), 1);
 
 
-        Item item2 = new Item();
+        Item item2 = new Potion();
         hero.addItem(item2);
 
         assertEquals(hero.getTotalItems(), 2);
@@ -37,7 +38,7 @@ public class ItemsTest {
 
 
         for (int i = 0; i < 100; i++) {
-            items[i] = new Item();
+            items[i] = new Potion();
             hero.addItem(items[i]);
             assertEquals(hero.getTotalItems(), i + 1);
             assertEquals(hero.getItem(i), items[i]);
@@ -50,9 +51,9 @@ public class ItemsTest {
         Hero hero = new Hero();
         assertEquals(hero.getTotalItems(), 0);
 
-        Item item1 = new Item();
-        Item item2 = new Item();
-        Item item3 = new Item();
+        Item item1 = new Potion();
+        Item item2 = new Potion();
+        Item item3 = new Potion();
 
         hero.addItem(item1);
         hero.addItem(item2);
@@ -77,11 +78,11 @@ public class ItemsTest {
 
         assertNull(hero.getItem(100));
 
-        Item item1 = new Item();
+        Item item1 = new Potion();
         hero.addItem(item1);
         assertNull(hero.getItem(1));
 
-        Item item2 = new Item();
+        Item item2 = new Potion();
         hero.addItem(item2);
         assertEquals(hero.getItem(1),  item2);
 
@@ -95,9 +96,9 @@ public class ItemsTest {
         Hero hero = new Hero();
         assertEquals(hero.getTotalItems(), 0);
 
-        Item item1 = new Item();
-        Item item2 = new Item();
-        Item item3 = new Item();
+        Item item1 = new Potion();
+        Item item2 = new Potion();
+        Item item3 = new Potion();
 
         hero.addItem(item1);
         hero.addItem(item2);
