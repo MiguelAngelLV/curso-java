@@ -1,6 +1,8 @@
 package test.com.swordsdragon;
 
 import com.swordsdragons.characters.GameCharacter;
+import com.swordsdragons.equip.Weapon;
+import com.swordsdragons.heros.Hero;
 import org.junit.Test;
 
 /**
@@ -16,5 +18,19 @@ public class PrintCharacterTest {
         character.setHp(30);
         character.setAttack(20);
         System.out.println(character);
+    }
+
+    @Test
+    public void printHero() {
+        Hero hero = new Hero();
+        hero.setName("Heroe 1");
+        hero.setMaxHP(75);
+        hero.setHp(75);
+        hero.addPXs(9000);
+        hero.setAttack(30);
+        hero.setWeapon(new Weapon(20));
+
+
+        System.out.println(hero);
     }
 }
